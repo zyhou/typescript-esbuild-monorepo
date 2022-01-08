@@ -1,0 +1,18 @@
+{
+    "private": true,
+    "name": "@project/api",
+    "version": "1.0.0",
+    "main": "dist/server.js",
+    "scripts": {
+        "dev": "node dev.js",
+        "build": "node build.js",
+        "start": "node .",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "fastify": "3.25.3"
+    },
+    "devDependencies": {
+        "@types/node": "17.0.8"
+    }
+}
