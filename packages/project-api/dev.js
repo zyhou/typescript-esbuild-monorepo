@@ -15,7 +15,7 @@ let proc;
 
 const onRebuild = () => {
     proc?.kill();
-    proc = childProcess.spawn('yarn', ['start'], {
+    proc = childProcess.spawn('node', ['dist/server.js'], {
         stdio: 'inherit',
         stderr: 'inherit',
         detached: false,
