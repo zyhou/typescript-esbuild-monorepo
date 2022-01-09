@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'next/head';
 
 import { prettyPong, newUUID } from '@project/core/src/ping';

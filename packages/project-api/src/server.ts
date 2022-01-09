@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import fastifyCors from 'fastify-cors';
 
 import { prettyPong, newUUID } from '@project/core/src/ping';
 import { getList, type Person } from '@project/core/src/person';
@@ -6,10 +7,10 @@ import { getFooter } from '@project/core/src/footer';
 
 const server = fastify();
 
-server.register(require('fastify-cors'));
+server.register(fastifyCors);
 
 server.get('/ping', async () => {
-    console.log(newUUID());
+    console.warn(newUUID());
     return prettyPong();
 });
 
@@ -29,5 +30,5 @@ server.listen(8080, (err, address) => {
         console.error(err);
         process.exit(1);
     }
-    console.log(`Server listening at ${address}`);
+    console.log(`Server listening at ${address}`); // eslint-disable-line no-console
 });

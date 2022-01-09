@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { prettyPong, newUUID } from '@project/core/src/ping';
 import type { Person } from '@project/core/src/person';
 
-const IndexPage = () => {
+const IndexPage = (): React.ReactElement => {
     const [persons, setPersons] = React.useState<Person[]>();
 
     React.useEffect(() => {
