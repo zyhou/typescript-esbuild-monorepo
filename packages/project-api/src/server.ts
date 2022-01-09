@@ -1,12 +1,22 @@
 import fastify from 'fastify';
 
 import { prettyPong, newUUID } from '@project/core/src/ping';
+import { getList, type Person } from '@project/core/src/person';
 
 const server = fastify();
 
-server.get('/ping', async (request, reply) => {
+server.register(require('fastify-cors'));
+
+server.get('/ping', async () => {
     console.log(newUUID());
     return prettyPong();
+});
+
+server.get('/person', async (request, reply): Promise<Person[]> => {
+    return reply
+        .code(200)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send(getList());
 });
 
 server.listen(8080, (err, address) => {
