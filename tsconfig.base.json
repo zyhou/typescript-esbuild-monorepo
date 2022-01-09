@@ -11,6 +11,7 @@
         "noImplicitAny": true,
         "noImplicitThis": true,
         "skipLibCheck": true,
-        "strict": true
+        "strict": true,
+        "allowJs": true
     }
 }

@@ -2,6 +2,7 @@ import fastify from 'fastify';
 
 import { prettyPong, newUUID } from '@project/core/src/ping';
 import { getList, type Person } from '@project/core/src/person';
+import { getFooter } from '@project/core/src/footer';
 
 const server = fastify();
 
@@ -10,6 +11,10 @@ server.register(require('fastify-cors'));
 server.get('/ping', async () => {
     console.log(newUUID());
     return prettyPong();
+});
+
+server.get('/footer', async () => {
+    return getFooter();
 });
 
 server.get('/person', async (request, reply): Promise<Person[]> => {

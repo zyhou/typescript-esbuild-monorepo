@@ -6,7 +6,6 @@
         "target": "ES5",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "allowJs": true,
         "incremental": true
     },
     "extends": "../../tsconfig.base.json",
